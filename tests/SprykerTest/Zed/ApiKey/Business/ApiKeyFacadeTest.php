@@ -345,12 +345,7 @@ class ApiKeyFacadeTest extends Unit
      */
     protected function mockUserFacade(): void
     {
-        $this->userFacadeMock = $this->getMockBuilder(ApiKeyToUserFacadeInterface::class)
-            ->disableOriginalConstructor()
-            ->onlyMethods([
-                'getCurrentUser',
-            ])
-            ->getMockForAbstractClass();
+        $this->userFacadeMock = $this->createMock(ApiKeyToUserFacadeInterface::class);
 
         $this->tester->setDependency(
             ApiKeyDependencyProvider::FACADE_USER,
