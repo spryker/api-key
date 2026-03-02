@@ -13,12 +13,6 @@ use Generated\Shared\Transfer\ApiKeyTransfer;
 
 class ApiKeyMapper
 {
-    /**
-     * @param \Generated\Shared\Transfer\ApiKeyCollectionDeleteCriteriaTransfer $apiKeyCollectionDeleteCriteriaTransfer
-     * @param \Generated\Shared\Transfer\ApiKeyCollectionResponseTransfer $apiKeyCollectionResponseTransfer
-     *
-     * @return \Generated\Shared\Transfer\ApiKeyCollectionResponseTransfer
-     */
     public function mapApiKeyIdsToApiKeyCollectionResponseTransfer(
         ApiKeyCollectionDeleteCriteriaTransfer $apiKeyCollectionDeleteCriteriaTransfer,
         ApiKeyCollectionResponseTransfer $apiKeyCollectionResponseTransfer

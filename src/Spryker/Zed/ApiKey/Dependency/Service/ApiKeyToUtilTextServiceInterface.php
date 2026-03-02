@@ -9,11 +9,5 @@ namespace Spryker\Zed\ApiKey\Dependency\Service;
 
 interface ApiKeyToUtilTextServiceInterface
 {
-    /**
-     * @param string $value
-     * @param string $algorithm
-     *
-     * @return string
-     */
     public function hashValue(string $value, string $algorithm): string;
 }

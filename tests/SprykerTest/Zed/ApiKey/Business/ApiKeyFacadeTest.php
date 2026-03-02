@@ -76,9 +76,6 @@ class ApiKeyFacadeTest extends Unit
      */
     protected $userTransfer;
 
-    /**
-     * @return void
-     */
     protected function setUp(): void
     {
         parent::setUp();
@@ -91,9 +88,6 @@ class ApiKeyFacadeTest extends Unit
         $this->mockUserFacade();
     }
 
-    /**
-     * @return void
-     */
     public function testGetApiKeyCollectionReturnsCollectionResponseTransferWithValidData(): void
     {
         //Arrange
@@ -111,9 +105,6 @@ class ApiKeyFacadeTest extends Unit
         $this->assertNull($apiKeyCollectionTransfer->getApiKeys()->offsetGet(0)->getKey());
     }
 
-    /**
-     * @return void
-     */
     public function testGetApiKeyCollectionReturnsCollectionResponseTransferWithNoExpiredValidData(): void
     {
         //Arrange
@@ -133,9 +124,6 @@ class ApiKeyFacadeTest extends Unit
         $this->assertEquals($this->tester::NO_EXPIRED_KEY_NAME, $apiKeyCollectionTransfer->getApiKeys()->offsetGet(0)->getName());
     }
 
-    /**
-     * @return void
-     */
     public function testGetApiKeyCollectionReturnsCollectionResponseTransferWithoutTransfers(): void
     {
         //Arrange
@@ -154,9 +142,6 @@ class ApiKeyFacadeTest extends Unit
         $this->assertEquals(0, $apiKeyCollectionTransfer->getApiKeys()->count());
     }
 
-    /**
-     * @return void
-     */
     public function testGetApiKeyCollectionReturnsEmptyCollectionResponseTransferIfIdApiKeyIsInvalid(): void
     {
         //Arrange
@@ -171,9 +156,6 @@ class ApiKeyFacadeTest extends Unit
         $this->assertEmpty($apiKeyCollectionTransfer->getApiKeys());
     }
 
-    /**
-     * @return void
-     */
     public function testCreateApiKeyCollectionCreatesRecord(): void
     {
         //Arrange
@@ -192,9 +174,6 @@ class ApiKeyFacadeTest extends Unit
         $this->assertNotEmpty($createdApiKeyEntity->getKeyHash());
     }
 
-    /**
-     * @return void
-     */
     public function testCreateApiKeyCollectionWithValidToDateToCreatesRecord(): void
     {
         //Arrange
@@ -214,9 +193,6 @@ class ApiKeyFacadeTest extends Unit
         $this->assertNotEmpty($createdApiKeyEntity->getKeyHash());
     }
 
-    /**
-     * @return void
-     */
     public function testCreateApiKeyCollectionWithInvalidReturnsError(): void
     {
         //Arrange
@@ -238,9 +214,6 @@ class ApiKeyFacadeTest extends Unit
         );
     }
 
-    /**
-     * @return void
-     */
     public function testCreateApiKeyCollectionReturnsErrorIfProvidedNameIsInvalid(): void
     {
         //Arrange
@@ -259,9 +232,6 @@ class ApiKeyFacadeTest extends Unit
         );
     }
 
-    /**
-     * @return void
-     */
     public function testCreateApiKeyCollectionReturnsErrorIfProvidedNameIsDuplicated(): void
     {
         //Arrange
@@ -280,9 +250,6 @@ class ApiKeyFacadeTest extends Unit
         );
     }
 
-    /**
-     * @return void
-     */
     public function testUpdateApiKeyCollectionUpdatesOnlyNameIfKeyIsNotRequestedToBeRegenerated(): void
     {
         //Arrange
@@ -301,9 +268,6 @@ class ApiKeyFacadeTest extends Unit
         $this->assertSame($this->tester::BAR_NAME, $updatedApiKeyEntity->getName());
     }
 
-    /**
-     * @return void
-     */
     public function testUpdateApiKeyCollectionUpdatesKeyHash(): void
     {
         //Arrange
@@ -323,9 +287,6 @@ class ApiKeyFacadeTest extends Unit
         $this->assertNotEmpty($updatedApiKeyEntity->getKeyHash());
     }
 
-    /**
-     * @return void
-     */
     public function testDeleteApiKeyCollectionRemovesEntity(): void
     {
         //Arrange
@@ -340,9 +301,6 @@ class ApiKeyFacadeTest extends Unit
         $this->assertNull($removedApiKeyEntity);
     }
 
-    /**
-     * @return void
-     */
     protected function mockUserFacade(): void
     {
         $this->userFacadeMock = $this->createMock(ApiKeyToUserFacadeInterface::class);

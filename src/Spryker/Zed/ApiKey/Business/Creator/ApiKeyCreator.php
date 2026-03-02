@@ -45,13 +45,6 @@ class ApiKeyCreator implements ApiKeyCreatorInterface
      */
     protected ApiKeyConfig $config;
 
-    /**
-     * @param \Spryker\Zed\ApiKey\Dependency\Facade\ApiKeyToUserFacadeInterface $userFacade
-     * @param \Spryker\Zed\ApiKey\Persistence\ApiKeyEntityManagerInterface $entityManager
-     * @param \Spryker\Zed\ApiKey\Business\Validator\ApiKeyValidatorInterface $validator
-     * @param \Spryker\Zed\ApiKey\Dependency\Service\ApiKeyToUtilTextServiceInterface $utilTextService
-     * @param \Spryker\Zed\ApiKey\ApiKeyConfig $config
-     */
     public function __construct(
         ApiKeyToUserFacadeInterface $userFacade,
         ApiKeyEntityManagerInterface $entityManager,
@@ -66,11 +59,6 @@ class ApiKeyCreator implements ApiKeyCreatorInterface
         $this->config = $config;
     }
 
-    /**
-     * @param \Generated\Shared\Transfer\ApiKeyCollectionRequestTransfer $apiKeyCollectionRequestTransfer
-     *
-     * @return \Generated\Shared\Transfer\ApiKeyCollectionResponseTransfer
-     */
     public function create(ApiKeyCollectionRequestTransfer $apiKeyCollectionRequestTransfer): ApiKeyCollectionResponseTransfer
     {
         foreach ($apiKeyCollectionRequestTransfer->getApiKeys() as $apiKeyTransfer) {
@@ -92,11 +80,6 @@ class ApiKeyCreator implements ApiKeyCreatorInterface
         });
     }
 
-    /**
-     * @param \Generated\Shared\Transfer\ApiKeyCollectionRequestTransfer $apiKeyCollectionRequestTransfer
-     *
-     * @return \Generated\Shared\Transfer\ApiKeyCollectionResponseTransfer
-     */
     protected function executeCreateApiKeyCollectionTransaction(
         ApiKeyCollectionRequestTransfer $apiKeyCollectionRequestTransfer
     ): ApiKeyCollectionResponseTransfer {

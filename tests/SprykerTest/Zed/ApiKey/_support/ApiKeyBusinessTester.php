@@ -87,9 +87,6 @@ class ApiKeyBusinessTester extends Actor
      */
     protected const NO_EXPIRED_API_KEY_HASH = 'fe4f0f707a786f2b4b5977cb49b2348d0fcb40dd5840a0ea4332c4af337e0c35';
 
-    /**
-     * @return void
-     */
     public function createFakeApiKeyRecord(): void
     {
         (new SpyApiKey())->setName(static::FOO_NAME)
@@ -98,9 +95,6 @@ class ApiKeyBusinessTester extends Actor
             ->save();
     }
 
-    /**
-     * @return void
-     */
     public function createFakeApiKeyExpiredRecord(): void
     {
         (new SpyApiKey())->setName(static::EXPIRED_KEY_NAME)
@@ -110,9 +104,6 @@ class ApiKeyBusinessTester extends Actor
             ->save();
     }
 
-    /**
-     * @return void
-     */
     public function createFakeApiKeyNotExpiredRecord(): void
     {
         (new SpyApiKey())->setName(static::NO_EXPIRED_KEY_NAME)
@@ -122,11 +113,6 @@ class ApiKeyBusinessTester extends Actor
             ->save();
     }
 
-    /**
-     * @param string $name
-     *
-     * @return \Orm\Zed\ApiKey\Persistence\SpyApiKey
-     */
     public function getFakeApiKeyEntityByName(string $name): SpyApiKey
     {
         return SpyApiKeyQuery::create()
@@ -134,11 +120,6 @@ class ApiKeyBusinessTester extends Actor
             ->findOne();
     }
 
-    /**
-     * @param int $id
-     *
-     * @return \Orm\Zed\ApiKey\Persistence\SpyApiKey|null
-     */
     public function getFakeApiKeyEntityById(int $id): ?SpyApiKey
     {
         return SpyApiKeyQuery::create()
@@ -146,9 +127,6 @@ class ApiKeyBusinessTester extends Actor
             ->findOne();
     }
 
-    /**
-     * @return int
-     */
     public function getNonExistingId(): int
     {
         $lastID = SpyApiKeyQuery::create()

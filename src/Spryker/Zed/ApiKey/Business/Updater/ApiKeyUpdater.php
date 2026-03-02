@@ -59,13 +59,6 @@ class ApiKeyUpdater implements ApiKeyUpdaterInterface
      */
     protected ApiKeyConfig $config;
 
-    /**
-     * @param \Spryker\Zed\ApiKey\Persistence\ApiKeyEntityManagerInterface $entityManager
-     * @param \Spryker\Zed\ApiKey\Persistence\ApiKeyRepositoryInterface $repository
-     * @param \Spryker\Zed\ApiKey\Business\Validator\ApiKeyValidatorInterface $validator
-     * @param \Spryker\Zed\ApiKey\Dependency\Service\ApiKeyToUtilTextServiceInterface $utilTextService
-     * @param \Spryker\Zed\ApiKey\ApiKeyConfig $config
-     */
     public function __construct(
         ApiKeyEntityManagerInterface $entityManager,
         ApiKeyRepositoryInterface $repository,
@@ -80,11 +73,6 @@ class ApiKeyUpdater implements ApiKeyUpdaterInterface
         $this->config = $config;
     }
 
-    /**
-     * @param \Generated\Shared\Transfer\ApiKeyCollectionRequestTransfer $apiKeyCollectionRequestTransfer
-     *
-     * @return \Generated\Shared\Transfer\ApiKeyCollectionResponseTransfer
-     */
     public function update(ApiKeyCollectionRequestTransfer $apiKeyCollectionRequestTransfer): ApiKeyCollectionResponseTransfer
     {
         foreach ($apiKeyCollectionRequestTransfer->getApiKeys() as $apiKeyTransfer) {
@@ -108,11 +96,6 @@ class ApiKeyUpdater implements ApiKeyUpdaterInterface
         });
     }
 
-    /**
-     * @param \Generated\Shared\Transfer\ApiKeyCollectionRequestTransfer $apiKeyCollectionRequestTransfer
-     *
-     * @return \Generated\Shared\Transfer\ApiKeyCollectionResponseTransfer
-     */
     protected function executeUpdateApiKeyCollectionTransaction(
         ApiKeyCollectionRequestTransfer $apiKeyCollectionRequestTransfer
     ): ApiKeyCollectionResponseTransfer {
@@ -158,11 +141,6 @@ class ApiKeyUpdater implements ApiKeyUpdaterInterface
         return $indexedApiKeyTransfers;
     }
 
-    /**
-     * @param \Generated\Shared\Transfer\ApiKeyCollectionRequestTransfer $apiKeyCollectionRequestTransfer
-     *
-     * @return \Generated\Shared\Transfer\ApiKeyCriteriaTransfer
-     */
     protected function createApiKeyCriteriaTransfer(
         ApiKeyCollectionRequestTransfer $apiKeyCollectionRequestTransfer
     ): ApiKeyCriteriaTransfer {

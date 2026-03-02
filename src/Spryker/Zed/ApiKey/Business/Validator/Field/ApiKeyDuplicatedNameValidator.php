@@ -30,20 +30,11 @@ class ApiKeyDuplicatedNameValidator implements ApiKeyValidatorInterface
      */
     protected ApiKeyRepositoryInterface $repository;
 
-    /**
-     * @param \Spryker\Zed\ApiKey\Persistence\ApiKeyRepositoryInterface $repository
-     */
     public function __construct(ApiKeyRepositoryInterface $repository)
     {
         $this->repository = $repository;
     }
 
-    /**
-     * @param \Generated\Shared\Transfer\ApiKeyTransfer $apiKeyTransfer
-     * @param \Generated\Shared\Transfer\ApiKeyCollectionResponseTransfer $apiKeyCollectionResponseTransfer
-     *
-     * @return \Generated\Shared\Transfer\ApiKeyCollectionResponseTransfer
-     */
     public function validate(
         ApiKeyTransfer $apiKeyTransfer,
         ApiKeyCollectionResponseTransfer $apiKeyCollectionResponseTransfer

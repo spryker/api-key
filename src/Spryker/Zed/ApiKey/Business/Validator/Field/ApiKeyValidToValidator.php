@@ -20,12 +20,6 @@ class ApiKeyValidToValidator implements ApiKeyValidatorInterface
      */
     protected const ERROR_VALID_TO_DATE = 'The provided `valid to` date `%s` already expired. Use another one and try again.';
 
-    /**
-     * @param \Generated\Shared\Transfer\ApiKeyTransfer $apiKeyTransfer
-     * @param \Generated\Shared\Transfer\ApiKeyCollectionResponseTransfer $apiKeyCollectionResponseTransfer
-     *
-     * @return \Generated\Shared\Transfer\ApiKeyCollectionResponseTransfer
-     */
     public function validate(
         ApiKeyTransfer $apiKeyTransfer,
         ApiKeyCollectionResponseTransfer $apiKeyCollectionResponseTransfer
@@ -45,11 +39,6 @@ class ApiKeyValidToValidator implements ApiKeyValidatorInterface
         return $apiKeyCollectionResponseTransfer;
     }
 
-    /**
-     * @param string $date
-     *
-     * @return bool
-     */
     protected function isValidToDate(string $date): bool
     {
         return new DateTime() < new DateTime($date);

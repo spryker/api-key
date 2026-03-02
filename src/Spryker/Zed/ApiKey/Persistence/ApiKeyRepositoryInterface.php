@@ -21,10 +21,5 @@ interface ApiKeyRepositoryInterface
      */
     public function getApiKeyCollection(ApiKeyCriteriaTransfer $apiKeyCriteriaTransfer, array $apiKeyHashes = []): ApiKeyCollectionTransfer;
 
-    /**
-     * @param \Generated\Shared\Transfer\ApiKeyTransfer $apiKeyTransfer
-     *
-     * @return bool
-     */
     public function checkApiKeyNameExists(ApiKeyTransfer $apiKeyTransfer): bool;
 }

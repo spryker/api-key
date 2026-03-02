@@ -12,10 +12,5 @@ use Generated\Shared\Transfer\ApiKeyCollectionResponseTransfer;
 
 interface ApiKeyCreatorInterface
 {
-    /**
-     * @param \Generated\Shared\Transfer\ApiKeyCollectionRequestTransfer $apiKeyCollectionRequestTransfer
-     *
-     * @return \Generated\Shared\Transfer\ApiKeyCollectionResponseTransfer
-     */
     public function create(ApiKeyCollectionRequestTransfer $apiKeyCollectionRequestTransfer): ApiKeyCollectionResponseTransfer;
 }

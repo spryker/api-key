@@ -12,12 +12,6 @@ use Generated\Shared\Transfer\ApiKeyTransfer;
 
 interface ApiKeyValidatorInterface
 {
-    /**
-     * @param \Generated\Shared\Transfer\ApiKeyTransfer $apiKeyTransfer
-     * @param \Generated\Shared\Transfer\ApiKeyCollectionResponseTransfer $apiKeyCollectionResponseTransfer
-     *
-     * @return \Generated\Shared\Transfer\ApiKeyCollectionResponseTransfer
-     */
     public function validate(
         ApiKeyTransfer $apiKeyTransfer,
         ApiKeyCollectionResponseTransfer $apiKeyCollectionResponseTransfer

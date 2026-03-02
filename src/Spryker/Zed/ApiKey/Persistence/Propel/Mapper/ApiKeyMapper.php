@@ -33,12 +33,6 @@ class ApiKeyMapper
         return $apiKeyCollectionTransfer;
     }
 
-    /**
-     * @param \Orm\Zed\ApiKey\Persistence\Base\SpyApiKey $apiKeyEntity
-     * @param \Generated\Shared\Transfer\ApiKeyTransfer $apiKeyTransfer
-     *
-     * @return \Generated\Shared\Transfer\ApiKeyTransfer
-     */
     public function mapApiKeyEntityToApiKeyTransfer(
         SpyApiKey $apiKeyEntity,
         ApiKeyTransfer $apiKeyTransfer

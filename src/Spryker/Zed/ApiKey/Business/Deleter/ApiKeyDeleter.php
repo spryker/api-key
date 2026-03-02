@@ -24,10 +24,6 @@ class ApiKeyDeleter implements ApiKeyDeleterInterface
      */
     protected ApiKeyMapper $mapper;
 
-    /**
-     * @param \Spryker\Zed\ApiKey\Persistence\ApiKeyEntityManagerInterface $entityManager
-     * @param \Spryker\Zed\ApiKey\Business\Mapper\ApiKeyMapper $mapper
-     */
     public function __construct(
         ApiKeyEntityManagerInterface $entityManager,
         ApiKeyMapper $mapper
@@ -36,11 +32,6 @@ class ApiKeyDeleter implements ApiKeyDeleterInterface
         $this->mapper = $mapper;
     }
 
-    /**
-     * @param \Generated\Shared\Transfer\ApiKeyCollectionDeleteCriteriaTransfer $apiKeyCollectionDeleteCriteriaTransfer
-     *
-     * @return \Generated\Shared\Transfer\ApiKeyCollectionResponseTransfer
-     */
     public function delete(ApiKeyCollectionDeleteCriteriaTransfer $apiKeyCollectionDeleteCriteriaTransfer): ApiKeyCollectionResponseTransfer
     {
         if ($apiKeyCollectionDeleteCriteriaTransfer->getApiKeyIds() === []) {

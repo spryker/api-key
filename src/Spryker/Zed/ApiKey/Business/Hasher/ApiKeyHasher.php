@@ -23,10 +23,6 @@ class ApiKeyHasher implements ApiKeyHasherInterface
      */
     protected ApiKeyConfig $config;
 
-    /**
-     * @param \Spryker\Zed\ApiKey\Dependency\Service\ApiKeyToUtilTextServiceInterface $utilTextService
-     * @param \Spryker\Zed\ApiKey\ApiKeyConfig $config
-     */
     public function __construct(
         ApiKeyToUtilTextServiceInterface $utilTextService,
         ApiKeyConfig $config

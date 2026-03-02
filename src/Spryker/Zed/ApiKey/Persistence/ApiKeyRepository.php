@@ -50,11 +50,6 @@ class ApiKeyRepository extends AbstractRepository implements ApiKeyRepositoryInt
             ->mapApiKeyEntityCollectionToApiKeyCollectionTransfer($apiKeysCollection, $apiKeyCollectionTransfer);
     }
 
-    /**
-     * @param \Generated\Shared\Transfer\ApiKeyTransfer $apiKeyTransfer
-     *
-     * @return bool
-     */
     public function checkApiKeyNameExists(ApiKeyTransfer $apiKeyTransfer): bool
     {
         $apiKeyQuery = $this->getFactory()->createApiKeyQuery();
@@ -74,12 +69,6 @@ class ApiKeyRepository extends AbstractRepository implements ApiKeyRepositoryInt
         return true;
     }
 
-    /**
-     * @param \Orm\Zed\ApiKey\Persistence\Base\SpyApiKeyQuery $apiKeyQuery
-     * @param \Generated\Shared\Transfer\ApiKeyConditionsTransfer $apiKeyConditionsTransfer
-     *
-     * @return \Orm\Zed\ApiKey\Persistence\Base\SpyApiKeyQuery
-     */
     protected function applyApiKeyConditions(
         SpyApiKeyQuery $apiKeyQuery,
         ApiKeyConditionsTransfer $apiKeyConditionsTransfer
@@ -103,12 +92,6 @@ class ApiKeyRepository extends AbstractRepository implements ApiKeyRepositoryInt
         return $apiKeyQuery;
     }
 
-    /**
-     * @param \Orm\Zed\ApiKey\Persistence\Base\SpyApiKeyQuery $apiKeyQuery
-     * @param array $apiKeyHashes
-     *
-     * @return \Orm\Zed\ApiKey\Persistence\Base\SpyApiKeyQuery
-     */
     protected function applyApikKeyHashesCondition(SpyApiKeyQuery $apiKeyQuery, array $apiKeyHashes): SpyApiKeyQuery
     {
         return $apiKeyQuery->filterByKeyHash_In($apiKeyHashes);

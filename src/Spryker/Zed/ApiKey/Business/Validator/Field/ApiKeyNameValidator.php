@@ -34,12 +34,6 @@ class ApiKeyNameValidator implements ApiKeyValidatorInterface
      */
     protected const KEY_NAME_PLACEHOLDER = '%s';
 
-    /**
-     * @param \Generated\Shared\Transfer\ApiKeyTransfer $apiKeyTransfer
-     * @param \Generated\Shared\Transfer\ApiKeyCollectionResponseTransfer $apiKeyCollectionResponseTransfer
-     *
-     * @return \Generated\Shared\Transfer\ApiKeyCollectionResponseTransfer
-     */
     public function validate(
         ApiKeyTransfer $apiKeyTransfer,
         ApiKeyCollectionResponseTransfer $apiKeyCollectionResponseTransfer

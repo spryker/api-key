@@ -35,9 +35,6 @@ use Spryker\Zed\Kernel\Business\AbstractBusinessFactory;
  */
 class ApiKeyBusinessFactory extends AbstractBusinessFactory
 {
-    /**
-     * @return \Spryker\Zed\ApiKey\Business\Creator\ApiKeyCreatorInterface
-     */
     public function createApiKeyCreator(): ApiKeyCreatorInterface
     {
         return new ApiKeyCreator(
@@ -49,9 +46,6 @@ class ApiKeyBusinessFactory extends AbstractBusinessFactory
         );
     }
 
-    /**
-     * @return \Spryker\Zed\ApiKey\Business\Updater\ApiKeyUpdaterInterface
-     */
     public function createApiKeyUpdater(): ApiKeyUpdaterInterface
     {
         return new ApiKeyUpdater(
@@ -63,9 +57,6 @@ class ApiKeyBusinessFactory extends AbstractBusinessFactory
         );
     }
 
-    /**
-     * @return \Spryker\Zed\ApiKey\Business\Reader\ApiKeyReaderInterface
-     */
     public function createApiKeyReader(): ApiKeyReaderInterface
     {
         return new ApiKeyReader(
@@ -74,9 +65,6 @@ class ApiKeyBusinessFactory extends AbstractBusinessFactory
         );
     }
 
-    /**
-     * @return \Spryker\Zed\ApiKey\Business\Deleter\ApiKeyDeleterInterface
-     */
     public function createApiKeyDeleter(): ApiKeyDeleterInterface
     {
         return new ApiKeyDeleter(
@@ -85,9 +73,6 @@ class ApiKeyBusinessFactory extends AbstractBusinessFactory
         );
     }
 
-    /**
-     * @return \Spryker\Zed\ApiKey\Business\Hasher\ApiKeyHasherInterface
-     */
     public function createApiKeyHasher(): ApiKeyHasherInterface
     {
         return new ApiKeyHasher(
@@ -96,9 +81,6 @@ class ApiKeyBusinessFactory extends AbstractBusinessFactory
         );
     }
 
-    /**
-     * @return \Spryker\Zed\ApiKey\Business\Validator\ApiKeyValidatorInterface
-     */
     public function createApiKeyValidator(): ApiKeyValidatorInterface
     {
         return new ApiKeyValidator(
@@ -118,25 +100,16 @@ class ApiKeyBusinessFactory extends AbstractBusinessFactory
         ];
     }
 
-    /**
-     * @return \Spryker\Zed\ApiKey\Business\Validator\ApiKeyValidatorInterface
-     */
     public function createApiKeyValidToValidator(): ApiKeyValidatorInterface
     {
         return new ApiKeyValidToValidator();
     }
 
-    /**
-     * @return \Spryker\Zed\ApiKey\Business\Validator\ApiKeyValidatorInterface
-     */
     public function createApiKeyNameValidator(): ApiKeyValidatorInterface
     {
         return new ApiKeyNameValidator();
     }
 
-    /**
-     * @return \Spryker\Zed\ApiKey\Business\Validator\ApiKeyValidatorInterface
-     */
     public function createApiKeyDuplicatedNameValidator(): ApiKeyValidatorInterface
     {
         return new ApiKeyDuplicatedNameValidator(
@@ -144,25 +117,16 @@ class ApiKeyBusinessFactory extends AbstractBusinessFactory
         );
     }
 
-    /**
-     * @return \Spryker\Zed\ApiKey\Business\Mapper\ApiKeyMapper
-     */
     public function createApiKeyMapper(): ApiKeyMapper
     {
         return new ApiKeyMapper();
     }
 
-    /**
-     * @return \Spryker\Zed\ApiKey\Dependency\Service\ApiKeyToUtilTextServiceInterface
-     */
     public function getUtilTextService(): ApiKeyToUtilTextServiceInterface
     {
         return $this->getProvidedDependency(ApiKeyDependencyProvider::SERVICE_UTIL_TEXT);
     }
 
-    /**
-     * @return \Spryker\Zed\ApiKey\Dependency\Facade\ApiKeyToUserFacadeInterface
-     */
     public function getUserFacade(): ApiKeyToUserFacadeInterface
     {
         return $this->getProvidedDependency(ApiKeyDependencyProvider::FACADE_USER);

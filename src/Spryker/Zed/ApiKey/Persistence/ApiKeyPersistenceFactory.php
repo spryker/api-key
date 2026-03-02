@@ -19,25 +19,16 @@ use Spryker\Zed\Kernel\Persistence\AbstractPersistenceFactory;
  */
 class ApiKeyPersistenceFactory extends AbstractPersistenceFactory
 {
-    /**
-     * @return \Orm\Zed\ApiKey\Persistence\Base\SpyApiKeyQuery
-     */
     public function createApiKeyQuery(): SpyApiKeyQuery
     {
         return SpyApiKeyQuery::create();
     }
 
-    /**
-     * @return \Orm\Zed\ApiKey\Persistence\SpyApiKey
-     */
     public function createApiKeyEntity(): SpyApiKey
     {
         return new SpyApiKey();
     }
 
-    /**
-     * @return \Spryker\Zed\ApiKey\Persistence\Propel\Mapper\ApiKeyMapper
-     */
     public function createApiKeyMapper(): ApiKeyMapper
     {
         return new ApiKeyMapper();

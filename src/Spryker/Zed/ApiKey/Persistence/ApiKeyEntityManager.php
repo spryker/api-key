@@ -15,11 +15,6 @@ use Spryker\Zed\Kernel\Persistence\AbstractEntityManager;
  */
 class ApiKeyEntityManager extends AbstractEntityManager implements ApiKeyEntityManagerInterface
 {
-    /**
-     * @param \Generated\Shared\Transfer\ApiKeyTransfer $apiKeyTransfer
-     *
-     * @return \Generated\Shared\Transfer\ApiKeyTransfer
-     */
     public function createApiKey(ApiKeyTransfer $apiKeyTransfer): ApiKeyTransfer
     {
         $apiKeyEntity = $this->getFactory()
@@ -32,11 +27,6 @@ class ApiKeyEntityManager extends AbstractEntityManager implements ApiKeyEntityM
             ->mapApiKeyEntityToApiKeyTransfer($apiKeyEntity, $apiKeyTransfer);
     }
 
-    /**
-     * @param \Generated\Shared\Transfer\ApiKeyTransfer $apiKeyTransfer
-     *
-     * @return \Generated\Shared\Transfer\ApiKeyTransfer
-     */
     public function updateApiKey(ApiKeyTransfer $apiKeyTransfer): ApiKeyTransfer
     {
         $apiKeyEntity = $this->getFactory()

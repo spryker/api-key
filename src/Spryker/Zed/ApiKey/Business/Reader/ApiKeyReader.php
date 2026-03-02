@@ -24,10 +24,6 @@ class ApiKeyReader implements ApiKeyReaderInterface
      */
     protected ApiKeyHasherInterface $apiKeyHasher;
 
-    /**
-     * @param \Spryker\Zed\ApiKey\Persistence\ApiKeyRepositoryInterface $repository
-     * @param \Spryker\Zed\ApiKey\Business\Hasher\ApiKeyHasherInterface $apiKeyHasher
-     */
     public function __construct(
         ApiKeyRepositoryInterface $repository,
         ApiKeyHasherInterface $apiKeyHasher
@@ -36,11 +32,6 @@ class ApiKeyReader implements ApiKeyReaderInterface
         $this->apiKeyHasher = $apiKeyHasher;
     }
 
-    /**
-     * @param \Generated\Shared\Transfer\ApiKeyCriteriaTransfer $apiKeyCriteriaTransfer
-     *
-     * @return \Generated\Shared\Transfer\ApiKeyCollectionTransfer
-     */
     public function getApiKeyCollection(ApiKeyCriteriaTransfer $apiKeyCriteriaTransfer): ApiKeyCollectionTransfer
     {
         $apiKeysHashes = $this->apiKeyHasher->getApiKeyHashes($apiKeyCriteriaTransfer);

@@ -12,10 +12,5 @@ use Generated\Shared\Transfer\ApiKeyCollectionResponseTransfer;
 
 interface ApiKeyDeleterInterface
 {
-    /**
-     * @param \Generated\Shared\Transfer\ApiKeyCollectionDeleteCriteriaTransfer $apiKeyCollectionDeleteCriteriaTransfer
-     *
-     * @return \Generated\Shared\Transfer\ApiKeyCollectionResponseTransfer
-     */
     public function delete(ApiKeyCollectionDeleteCriteriaTransfer $apiKeyCollectionDeleteCriteriaTransfer): ApiKeyCollectionResponseTransfer;
 }
